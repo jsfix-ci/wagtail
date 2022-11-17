@@ -25,7 +25,7 @@ export function initSidebar() {
   if (element && rawProps?.textContent) {
     const props = window.telepath.unpack(JSON.parse(rawProps.textContent));
 
-    const collapsedCookie: any = Cookies.get(SIDEBAR_COLLAPSED_COOKIE_NAME);
+    const collapsedCookie: any = JSON.parse(Cookies.get(SIDEBAR_COLLAPSED_COOKIE_NAME));
     // Cast to boolean
     const collapsed = !(
       collapsedCookie === undefined || collapsedCookie === '0'
